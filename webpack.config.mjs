@@ -3,7 +3,9 @@ import path from 'node:path';
 import TerserPlugin from 'terser-webpack-plugin';
 import * as Repack from '@callstack/repack';
 
-const STANDALONE = false;
+// const STANDALONE = Boolean(process.env.STANDALONE);
+const STANDALONE = true;  // true = Host , false = Microfrontend
+
 const dirname = Repack.getDirname(import.meta.url);
 const {resolve} = createRequire(import.meta.url);
 
@@ -276,7 +278,7 @@ export default env => {
          */
         name: 'characters',
         exposes: {
-          './App': './App',
+          './App': './src/navigation/StackNavigator', // StackNavigator
         },
         /**
          * Shared modules are shared in the share scope.
