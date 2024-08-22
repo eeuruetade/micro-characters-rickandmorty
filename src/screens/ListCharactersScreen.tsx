@@ -1,5 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
-import axios from 'axios';
+import axios from 'redaxios';
 import React, {useEffect, useState} from 'react';
 import {Button, FlatList, Image, StyleSheet, Text, View} from 'react-native';
 
@@ -19,13 +19,15 @@ export const ListCharactersScreen = () => {
       });
   }, []);
 
-  const renderItem = ({item}) => (
+  // onPress={() => navigation.navigate('Character', {character: item})}
+
+  const renderItem = ({item}: any) => (
     <View style={styles.itemContainer}>
       <Image source={{uri: item.image}} style={styles.image} />
       <Text style={styles.name}>{item.name}</Text>
       <Button
-        color={'#8A2BE2'}
-        title="View Character"
+        color={'#019DF4'}
+        title="View..."
         onPress={() => navigation.navigate('Character', {character: item})}
       />
     </View>
@@ -33,10 +35,9 @@ export const ListCharactersScreen = () => {
 
   return (
     <View>
-      <Text>ListCharactersScreen</Text>
       <FlatList
         data={characters}
-        keyExtractor={item => item.id.toString()}
+        keyExtractor={(item: any) => item.id.toString()}
         renderItem={renderItem}
       />
     </View>

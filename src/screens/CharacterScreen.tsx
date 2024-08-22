@@ -1,7 +1,8 @@
-import React from 'react';
+import {useNavigation} from '@react-navigation/native';
+import React, {useEffect} from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 
-export const CharacterScreen = ({route}) => {
+export const CharacterScreen = ({route}: any) => {
   const {character} = route.params;
 
   return (

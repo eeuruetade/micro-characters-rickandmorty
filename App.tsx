@@ -9,31 +9,32 @@ const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="ListCharacters">
-        <Stack.Screen
-          name="ListCharacters"
-          component={ListCharactersScreen}
-          options={() => ({
-            headerLeft: () => null,
-          })}
-        />
-        <Stack.Screen
-          name="Character"
-          component={CharacterScreen}
-          options={({navigation}) => ({
-            headerRight: () => (
-              <Button
-                onPress={() => navigation.navigate('ListCharacters')}
-                title="Return ListCharacters"
-                color="#8A2BE2"
-              />
-            ),
-            headerLeft: () => null,
-          })}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    // <NavigationContainer>
+    <Stack.Navigator initialRouteName="ListCharacters">
+      <Stack.Screen
+        name="ListCharacters"
+        component={ListCharactersScreen}
+        options={() => ({
+          headerLeft: () => null,
+          title: 'List Characters',
+        })}
+      />
+      <Stack.Screen
+        name="Character"
+        component={CharacterScreen}
+        options={({navigation}) => ({
+          headerRight: () => (
+            <Button
+              onPress={() => navigation.navigate('ListCharacters')}
+              title="Return"
+              color="#019DF4"
+            />
+          ),
+          headerLeft: () => null,
+        })}
+      />
+    </Stack.Navigator>
+    // </NavigationContainer>
   );
 };
 
