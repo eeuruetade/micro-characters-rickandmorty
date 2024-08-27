@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
   name: {
     flex: 1,
     fontSize: 18,
+    color: '#5f6368',
   },
   detailContainer: {
     flex: 1,
