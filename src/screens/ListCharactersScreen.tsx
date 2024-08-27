@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 10,
     alignItems: 'center',
+    backgroundColor: '#000000',
   },
   viewCharacter: {
     color: '#3b5998',
@@ -56,13 +57,13 @@ const styles = StyleSheet.create({
   image: {
     width: 50,
     height: 50,
-    borderRadius: 25,
+    borderRadius: 5,
     marginRight: 10,
   },
   name: {
     flex: 1,
     fontSize: 18,
-    color: '#5f6368',
+    color: '#e1e1e1',
   },
   detailContainer: {
     flex: 1,
